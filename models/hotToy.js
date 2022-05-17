@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const figureSchema = new mongoose.Schema({
-    number: {
+const hotToySchema = new mongoose.Schema({
+    _id: {
         type: String,
         required: true
     },
@@ -13,20 +13,26 @@ const figureSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    subBrand: {
+        type: String
+    },
     revealYear: {
         type: Number
     },
     releaseYear: {
-        type: Number
-    },
-    skuDefault: {
         type: Number,
         required: true
     },
+    skuDefault: {
+        type: Number,
+    },
     skuSecondary: {
+        type: Number
+    },
+    msrp: {
         type: Number
     }
 
 });
 
-module.exports = mongoose.model('Figure', figureSchema);
+module.exports = mongoose.model('HotToy', hotToySchema);
